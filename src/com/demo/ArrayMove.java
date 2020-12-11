@@ -4,6 +4,23 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ArrayMove {
+
+    public static void main(String[] args) {
+        Integer array[] = {1,2,3,4,5,6,7};
+        System.out.println("原数组：");
+        System.out.println(Arrays.toString(array));
+        arr arr = new ArrayMove().new arr(array);
+        arr2 arr2 = new ArrayMove().new arr2(array);
+        int i = 1;
+        while (i <= array.length){
+            System.out.println("第" + i + "次调用");
+            System.out.println("第一种方式：");
+            arr.move();
+            System.out.println("第二种方式：");
+            arr2.move();
+            i++;
+        }
+    }
     class arr{
         private Integer array[];
 
@@ -44,21 +61,4 @@ public class ArrayMove {
             System.out.println(Arrays.toString(array));
         }
     }
-    public static void main(String[] args) {
-        Integer array[] = {1,2,3,4,5,6,7};
-        System.out.println("原数组：");
-        System.out.println(Arrays.toString(array));
-        arr arr = new ArrayMove().new arr(array);
-        arr2 arr2 = new ArrayMove().new arr2(array);
-        int i = 1;
-        while (i <= array.length){
-            System.out.println("第" + i + "次调用");
-            System.out.println("第一种方式：");
-            arr.move();
-            System.out.println("第二种方式：");
-            arr2.move();
-            i++;
-        }
-    }
-
 }
