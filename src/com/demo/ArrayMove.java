@@ -28,18 +28,35 @@ public class ArrayMove {
             System.out.println(Arrays.toString(array));
         }
     }
+    class arr2{
+        private Integer array[];
+
+        public arr2(Integer a[]){
+            this.array = a;
+        }
+        public void move(){
+            int temp = -1;
+            for (int i = 0; i < array.length; i++) {
+                temp = array[array.length - 1];
+                array[array.length - 1] = array[i];
+                array[i] = temp;
+            }
+            System.out.println(Arrays.toString(array));
+        }
+    }
     public static void main(String[] args) {
         Integer array[] = {1,2,3,4,5,6,7};
-        for (int i1 = 0; i1 < array.length; i1++) {
-            System.out.print(array[i1]);
-        }
+        System.out.println("原数组：");
+        System.out.println(Arrays.toString(array));
         arr arr = new ArrayMove().new arr(array);
+        arr2 arr2 = new ArrayMove().new arr2(array);
         int i = 1;
         while (i <= array.length){
             System.out.println("第" + i + "次调用");
-//            arr.move();
-//            System.out.println("move2");
-            arr.move2();
+            System.out.println("第一种方式：");
+            arr.move();
+            System.out.println("第二种方式：");
+            arr2.move();
             i++;
         }
     }
