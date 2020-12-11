@@ -18,6 +18,15 @@ public class ArrayMove {
             this.array = objects;
             System.out.println(Arrays.toString(objects));
         }
+        public void move2(){
+            int temp = -1;
+            for (int i = 0; i < array.length; i++) {
+                temp = array[array.length - 1];
+                array[array.length - 1] = array[i];
+                array[i] = temp;
+            }
+            System.out.println(Arrays.toString(array));
+        }
     }
     public static void main(String[] args) {
         Integer array[] = {1,2,3,4,5,6,7};
@@ -28,7 +37,9 @@ public class ArrayMove {
         int i = 1;
         while (i <= array.length){
             System.out.println("第" + i + "次调用");
-            arr.move();
+//            arr.move();
+//            System.out.println("move2");
+            arr.move2();
             i++;
         }
     }
