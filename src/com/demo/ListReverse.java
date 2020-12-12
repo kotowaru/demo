@@ -28,8 +28,8 @@ public class ListReverse {
         if(list == null || list.size() == 0){
             return newList;
         }
-        Object remove = list.remove(list.size() - 1);
-        newList.add(remove);
+        Object remove = list.remove(0);
+        newList.add(0,remove);
         return reverse(list,newList);
     }
 }

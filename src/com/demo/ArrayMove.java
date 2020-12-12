@@ -35,15 +35,6 @@ public class ArrayMove {
             this.array = objects;
             System.out.println(Arrays.toString(objects));
         }
-        public void move2(){
-            int temp = -1;
-            for (int i = 0; i < array.length; i++) {
-                temp = array[array.length - 1];
-                array[array.length - 1] = array[i];
-                array[i] = temp;
-            }
-            System.out.println(Arrays.toString(array));
-        }
     }
     class arr2{
         private Integer array[];
