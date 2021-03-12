@@ -32,4 +32,24 @@ public class ListReverse {
         newList.add(0,remove);
         return reverse(list,newList);
     }
+//    public ListNode ReverseList(ListNode head) {
+//        ListNode p = new ListNode(0);
+//        p.next = null;
+//        while(head != null){
+//            ListNode temp = head.next;
+//            head.next = p.next;
+//            p.next = head;
+//            head = temp;
+//        }
+//        return p.next;
+//    }
+    /*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/
 }
