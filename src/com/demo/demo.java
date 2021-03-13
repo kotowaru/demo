@@ -16,7 +16,7 @@ public class demo {
 //        find2(24,60);//最大公约数，最小公倍数
 //        tongji();//统计出其中英文字母、空格、数字和其它字符的个数。
 //        find3();//完数
-//        qiu(100,1);
+//        qiu(100,2);
 //        System.out.println(Monkey(1,2,1,10));  //猴子吃桃 方程解法
 //        System.out.println(total(1));  //猴子吃桃 一般方式
     }
@@ -171,14 +171,15 @@ public class demo {
      * 一球从100 米高度自由落下,每次落地后反跳回原高度的一半;再落下,
      * 相当于 hn = h*(1/2)^n n是弹跳次数
      * 等比数列前n项和：a1(1-q^n)/(1-q) (q≠1)，这里的是弹跳所以首项是1/2
+     *
      */
     public static void qiu(int high,int count){
         double h = (double)high;
         double hn;
         double H;
         hn = high * Math.pow(0.5,count);//pow(a,b) = a^b
-        H = high + high * (1 - Math.pow(0.5,count));
-        System.out.println(String.format("第 %d 次：高度为 %f ，总路程为：%f",count,hn,H));
+        H = high + 2 * high * (1 - Math.pow(0.5,count - 1));
+        System.out.println(String.format("第 %d 次落地可弹起高度为 %f ，期间总路程为：%f",count,hn,H));
     }
 
     /**
@@ -212,7 +213,7 @@ public class demo {
      */
     /**
      *
-     * @param last 剩余数
+     * @param last 剩余数 (当天吃完剩余多少，按题目第十天是每吃的所以应是9)
      * @param Proportion 比例  （吃的比例） 1/2 输 2, 1/3 输 3
      * @param and 偏正 （每次多吃了几个）
      * @param day 天数 （吃了几天）
@@ -220,7 +221,7 @@ public class demo {
      */
     public static double Monkey(int last, int Proportion, int and, int day){
         double sum;
-        //由于最后一天没吃，所以实际吃了 day - 1 次
+        //这里计算的是第二天没吃之前的数量，也就是当天吃完之后还剩多少
         sum = ((double) last + 2 * and) * Math.pow((double) Proportion, (double) day - 1) - (double) Proportion;
         return sum;
     }
